@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Línea de Tiempo: Evolución de la Industria</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="shortcut icon" href="https://www.infoplc.net/media/k2/items/cache/df855ff5ee0a3b164e805230e0d314cd_XL.jpg" type="image/x-icon">
+</head>
+<body>
+
+     <header class="hero-header">
+        <img src="https://ambienteplastico.com/wp-content/uploads/2019/03/1200px-Industry_4.0-e1614113688947-1024x358.png" alt="Fondo" class="hero-image">
+        <div class="hero-overlay">
+            <h1 class="hero-title">EVOLUCIÓN DE LA INDUSTRIA</h1>
+        </div>
+    </header>
+
+  <div class="timeline">
+    <div class="timeline-event left">
+        <center><img src="https://media.licdn.com/dms/image/v2/D4E12AQFbHxOXgIZxew/article-inline_image-shrink_400_744/article-inline_image-shrink_400_744/0/1712629196250?e=1741824000&v=beta&t=yoAcrLIgqxFm1Fb7r48dY3bHwCuS2Ta6j08tt4zNnFI" width="200px"></center>
+      <h2>Industria 1.0 (Siglo XVIII)</h2>
+      <p>Caracterizada por la mecanización y el uso de energía de vapor para impulsar las fábricas. Marcó el inicio de la producción masiva, gracias a avances como el telar mecánico.</p><br>
+      <p><strong>Industria impulsora:</strong> Textil y manufactura.</p>
+      <p><strong>Impacto en empresas:</strong> Surgieron fábricas centralizadas y nuevos modelos laborales.</p>
+    </div>
+    <div class="timeline-event right">
+        <center><img src="https://humanidades.com/wp-content/uploads/2017/04/segunda-revolucion-industrial-2-e1567527753152.jpg" width="200px"></center>
+      <h2>Industria 2.0 (Siglo XIX)</h2>
+      <p>Introdujo la producción en masa mediante líneas de ensamblaje y el uso de electricidad. Se optimizó la eficiencia en la producción.</p><br>
+      <p><strong>Industria impulsora:</strong> Automotriz (Henry Ford y la línea de ensamblaje).</p>
+      <p><strong>Impacto en empresas:</strong> Mayor producción a menor costo, desarrollo de nuevas industrias.</p>
+    </div>
+    <div class="timeline-event left">
+        <center><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6g04nQ84kTysDKYIn3gOyj3yfKtXhppsZZw&s" width="200px"></center>
+      <h2>Industria 3.0 (1960-1970)</h2>
+      <p>Se enfocó en la automatización mediante electrónica, informática y robótica. Las computadoras comenzaron a integrarse en los procesos productivos.</p><br>
+      <p><strong>Industria impulsora:</strong> Electrónica, informática y manufactura.</p>
+      <p><strong>Impacto en empresas:</strong> Reducción de errores humanos y aumento de la productividad.</p>
+    </div>
+    <div class="timeline-event right">
+        <center><img src="https://www.industriall-union.org/sites/default/files/uploads/images/2015/GlobalWorker/rtx1iu75.jpg" width="200px"></center>
+      <h2>Industria 4.0 (Actualidad)</h2>
+      <p>Basada en la digitalización, el Internet de las Cosas (IoT), inteligencia artificial, Big Data y sistemas ciberfísicos. Fomenta fábricas inteligentes y cadenas de suministro conectadas.</p><br>
+      <p><strong>Industria impulsora:</strong> Tecnológica, logística y manufactura avanzada.</p>
+      <p><strong>Impacto en empresas:</strong> Personalización masiva, eficiencia en tiempo real y transformación digital.</p>
+    </div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const timelineEvents = document.querySelectorAll(".timeline-event");
+  
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible"); // Agrega la clase cuando el elemento es visible
+          }
+        });
+      }, { threshold: 0.2 }); // Se activa cuando el 20% del elemento está visible
+  
+      timelineEvents.forEach((event) => observer.observe(event));
+    });
+  </script>
+  
+</body>
+</html>

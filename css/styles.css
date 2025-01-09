@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header Styles */
+.hero-header {
+    position: relative;
+    width: 100%;
+    height: 30vh; /* Full viewport height */
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire header */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Places the image beneath the overlay */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Black overlay with opacity */
+    z-index: 2; /* Places the overlay above the image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Text shadow for better readability */
+    padding: 0 1rem; /* Adds padding for better view on small devices */
+    transition: transform 0.3s ease;
+    z-index: 3; /* Places the text above everything */
+}
+
+.hero-title:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .hero-title {
+        font-size: 4rem; /* Bigger text on larger screens */
+    }
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  h2 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 2rem;
+    color: black;
+  }
+  
+  .timeline {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+  }
+  
+  .timeline-event {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    position: relative;
+  }
+  
+  .timeline-event.left {
+    align-self: flex-start;
+    margin-left: 0;
+    transition-duration: 1s;
+  }
+
+  .timeline-event.left:hover{
+    box-shadow: 1px 1px 5px black;
+  }
+  
+  .timeline-event.right {
+    align-self: flex-end;
+    margin-right: 0;
+    transition-duration: 1s;
+  }
+  
+  .timeline-event.right:hover{
+    box-shadow: 1px 1px 5px black;
+  }
+
+  .timeline-event::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    width: 10px;
+    height: 10px;
+    background-color: grey;
+    border: 2px solid #fff;
+    border-radius: 50%;
+  }
+  
+  .timeline-event.left::before {
+    left: -20px;
+  }
+  
+  .timeline-event.right::before {
+    right: -20px;
+  }
+  
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 4px;
+    background-color: black;
+  }
+  
+  /* Estilo responsive para dispositivos móviles */
+  @media (max-width: 768px) {
+    .timeline-event {
+      width: 90%;
+      align-self: center;
+      text-align: center;
+    }
+  
+    .timeline-event.left,
+    .timeline-event.right {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  
+    .timeline-event::before {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  
+    .timeline::before {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .timeline::before {
+        content: '';
+        position: absolute;
+        top: 140px;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        width: 4px;
+        background-color: #0073e6;
+      }
+  }
+  
+/* Añadir animación de fade-in */
+.timeline-event {
+    opacity: 0;
+    transform: translateY(20px); /* Posición inicial */
+    transition: all 0.6s ease-out; /* Animación suave */
+}
+
+.timeline-event.visible {
+    opacity: 1;
+    transform: translateY(0); /* Posición final */
+}
